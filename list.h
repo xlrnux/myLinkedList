@@ -108,7 +108,7 @@ public:
             return iterator(temp);
         }
     };
-    void Push_back(T _Data)
+    void push_back(T _Data)
     {
         Node<T> * pNewNode = new Node<T>;
         pNewNode->Data = _Data;
@@ -119,7 +119,7 @@ public:
         pTail->pPrev->pNext = pNewNode;
         pTail->pPrev = pNewNode;
     }
-    void Push_front(T _Data)
+    void push_front(T _Data)
     {
         Node<T> * pNewNode = new Node<T>;
         pNewNode->Data = _Data;
@@ -130,7 +130,7 @@ public:
         pHead->pNext->pPrev = pNewNode;
         pHead->pNext = pNewNode;
     }
-    void Pop_back()
+    void pop_back()
     {
         Node<T> * pDelNode = pTail->pPrev;
         if (pDelNode == pHead) return;
@@ -138,7 +138,7 @@ public:
         pTail->pPrev = pTail->pPrev->pPrev;
         delete pDelNode;
     }
-    void Pop_front()
+    void pop_front()
     {
         Node<T> * pDelNode = pHead->pNext;
         if (pDelNode == pTail) return;
@@ -147,7 +147,7 @@ public:
         delete pDelNode;
     }
 
-    void Insert(list<T>::iterator _Where, T _Data)
+    void insert(list<T>::iterator _Where, T _Data)
     {
         Node<T> * Location = _Where.pNode;
         Node<T> * NewNode = new Node<T>;
